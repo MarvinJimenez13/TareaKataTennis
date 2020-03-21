@@ -60,6 +60,42 @@ public class Juego {
         
     }
     
+    public String esDeuce(){
+        
+        String deuce = "";
+        if(jugador1.getPuntuacion() == 40 && jugador2.getPuntuacion() == jugador1.getPuntuacion())
+            deuce = "deuce";
+        else
+            deuce = null;
+        
+        return deuce;
+        
+    }
     
+    public String ventaja(){
+        
+        String ventaja = "";
+        
+        if(jugador1.getPuntuacion() + 1  == jugador2.getPuntuacion())
+            ventaja = jugador2.getNombre();
+        else if(jugador2.getPuntuacion() + 1 == jugador1.getPuntuacion())
+            ventaja = jugador1.getNombre();
+        
+        return ventaja;
+            
+    }
+    
+    public String ganador(){
+        
+        String ganador = "";
+        
+        if(jugador1.getPuntuacion() > 40 && jugador2.getPuntuacion() < 40)
+            ganador = jugador1.getNombre();
+        else if(jugador2.getPuntuacion() > 40 && jugador1.getPuntuacion() < 40)
+            ganador = jugador2.getNombre();
+        
+        return ganador;
+        
+    }
     
 }
